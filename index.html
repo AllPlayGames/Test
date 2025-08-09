@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllPlay - Level Up Your Experience</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background inspired by gaming UI */
+        }
+        .hero-bg {
+            /* Using a radial gradient for a more dynamic, modern look */
+            background: radial-gradient(circle at center, #1a202c 0%, #0d1117 100%);
+            position: relative;
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #f87171, #f97316); /* A vibrant gradient for the text */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo-image {
+            max-height: 40px;
+            width: auto;
+        }
+        .gradient-button {
+            background-image: linear-gradient(to right, #f87171, #ef4444);
+            transition: all 0.3s ease;
+        }
+        .gradient-button:hover {
+            background-image: linear-gradient(to right, #ef4444, #f87171);
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .logo-image {
+                max-height: 30px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Navigation Bar -->
+    <header class="bg-gray-900 p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo - Updated with a placeholder for the new style -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://placehold.co/100x100/f97316/ffffff?text=AP" alt="AllPlay Logo" class="logo-image rounded-full">
+                <span class="text-2xl font-bold text-white tracking-wide hidden md:block">AllPlay</span>
+            </a>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Home</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Games</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">About Us</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a>
+                <button class="gradient-button text-white font-bold py-2 px-6 rounded-full shadow-lg">
+                    Join Now
+                </button>
+            </nav>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 text-center">
+            <a href="#" class="block py-2 text-gray-400 hover:bg-gray-800 transition-colors duration-200">Home</a>
+            <a href="#" class="block py-2 text-gray-400 hover:bg-gray-800 transition-colors duration-200">Games</a>
+            <a href="#" class="block py-2 text-gray-400 hover:bg-gray-800 transition-colors duration-200">About Us</a>
+            <a href="#" class="block py-2 text-gray-400 hover:bg-gray-800 transition-colors duration-200">Contact</a>
+            <button class="w-full mt-4 gradient-button text-white font-bold py-2 px-6 rounded-full shadow-lg">
+                Join Now
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero-bg text-center py-20 md:py-32 flex items-center justify-center min-h-[calc(100vh-64px)]">
+        <div class="container mx-auto z-10 p-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tighter">
+                <span class="text-gradient">Level Up</span> Your Experience
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                AllPlay is your ultimate destination for everything gaming. Discover new worlds, compete with friends, and join a vibrant community.
+            </p>
+            <a href="#games" class="gradient-button text-white font-bold py-3 px-10 rounded-full text-lg shadow-xl">
+                Explore Games
+            </a>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section id="features" class="bg-gray-800 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-center text-white mb-12">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <!-- Feature 1 -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 transition-transform transform hover:scale-105">
+                    <svg class="h-16 w-16 mx-auto mb-4 text-red-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.01L6 12.01l1.41-1.41 3.59 3.59 7.59-7.59L18 8.01l-7 7z"/></svg>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Latest Releases</h3>
+                    <p class="text-gray-400">Stay up-to-date with the newest and most exciting games hitting the market.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 transition-transform transform hover:scale-105">
+                    <svg class="h-16 w-16 mx-auto mb-4 text-red-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 6h-6V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H2v15h20V6zm-8 0h-4V4h4v2z"/></svg>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Community & Events</h3>
+                    <p class="text-gray-400">Join our thriving community and participate in exclusive events and tournaments.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 transition-transform transform hover:scale-105">
+                    <svg class="h-16 w-16 mx-auto mb-4 text-red-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 10.999h-4.001v-4.001h-2v4h-4v-4h-2v4h-4v-4h-2v4H2v2h4.001v4.001h4v-4h4v4h4v-4h4V11z"/></svg>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Esports Coverage</h3>
+                    <p class="text-gray-400">Get the latest news, streams, and results from your favorite esports leagues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto text-center px-4">
+            <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-4 md:space-y-0 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-white">Sitemap</a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2023 AllPlay. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+
+
