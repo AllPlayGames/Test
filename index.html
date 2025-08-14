@@ -3,150 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AllPlay - Level Up Your Experience</title>
+    <title>Nextbit</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Dark background inspired by gaming UI */
         }
-        .hero-bg {
-            /* Using a radial gradient for a more dynamic, modern look */
-            background: radial-gradient(circle at center, #1a202c 0%, #0d1117 100%);
-            position: relative;
+        /* Custom glowing effect for buttons and text */
+        .glowing-text {
+            text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7;
         }
-        .text-gradient {
-            background-image: linear-gradient(to right, #f87171, #f97316); /* A vibrant gradient for the text */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .glowing-button {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
         }
-        .logo-image {
-            max-height: 40px;
-            width: auto;
+        .glowing-button:hover {
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.8), 0 0 25px rgba(168, 85, 247, 0.6);
+            transform: translateY(-2px);
         }
-        .gradient-button {
-            background-image: linear-gradient(to right, #f87171, #ef4444);
-            transition: all 0.3s ease;
-        }
-        .gradient-button:hover {
-            background-image: linear-gradient(to right, #ef4444, #f87171);
-            transform: scale(1.05);
-        }
-        @media (max-width: 768px) {
-            .logo-image {
-                max-height: 30px;
-            }
+        .bg-pattern {
+            background-image: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+            background-size: 500px 500px;
+            background-position: center;
         }
     </style>
 </head>
-<body class="text-gray-200">
+<body class="bg-slate-950 text-white min-h-screen">
 
-    <!-- Navigation Bar -->
-    <header class="bg-gray-900 p-4 sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo - Updated with a placeholder for the new style -->
-            <a href="#" class="flex items-center space-x-2">
-                <img src="https://placehold.co/100x100/f97316/ffffff?text=AP" alt="AllPlay Logo" class="logo-image rounded-full">
-                <span class="text-2xl font-bold text-white tracking-wide hidden md:block">AllPlay</span>
-            </a>
-
-            <!-- Mobile menu button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-400 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+    <!-- Header -->
+    <header class="bg-slate-900 border-b border-purple-800/50 p-4">
+        <nav class="container mx-auto flex justify-between items-center px-4 md:px-0">
+            <a href="#" class="text-3xl font-bold text-white glowing-text">Nextbit</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="text-slate-300 hover:text-white transition duration-200">Home</a>
+                <a href="#bots" class="text-slate-300 hover:text-white transition duration-200">Bots</a>
+                <a href="#about" class="text-slate-300 hover:text-white transition duration-200">About</a>
+                <a href="#" class="bg-purple-600 text-white px-6 py-2 rounded-full glowing-button">Connect</a>
+            </div>
+            <!-- Mobile Menu Button (optional, but good practice) -->
+            <button class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Home</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Games</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">About Us</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a>
-                <button class="gradient-button text-white font-bold py-2 px-6 rounded-full shadow-lg">
-                    Join Now
-                </button>
-            </nav>
-        </div>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 text-center">
-            <a href="#" class="block py-2 text-gray-400 hover:bg-gray-800 transition-colors duration-200">Home</a>
-            <a href="#" class="block py-2 text-gray-400 hover:bg-gray-800 transition-colors duration-200">Games</a>
-            <a href="#" class="block py-2 text-gray-400 hover:bg-gray-800 transition-colors duration-200">About Us</a>
-            <a href="#" class="block py-2 text-gray-400 hover:bg-gray-800 transition-colors duration-200">Contact</a>
-            <button class="w-full mt-4 gradient-button text-white font-bold py-2 px-6 rounded-full shadow-lg">
-                Join Now
-            </button>
-        </div>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <main class="hero-bg text-center py-20 md:py-32 flex items-center justify-center min-h-[calc(100vh-64px)]">
-        <div class="container mx-auto z-10 p-4">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tighter">
-                <span class="text-gradient">Level Up</span> Your Experience
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-                AllPlay is your ultimate destination for everything gaming. Discover new worlds, compete with friends, and join a vibrant community.
-            </p>
-            <a href="#games" class="gradient-button text-white font-bold py-3 px-10 rounded-full text-lg shadow-xl">
-                Explore Games
-            </a>
-        </div>
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- Hero Section -->
+        <section id="home" class="flex flex-col-reverse md:flex-row items-center justify-between my-12 md:my-24 bg-slate-900 rounded-3xl p-6 md:p-12 border border-purple-800/50 relative overflow-hidden">
+            <!-- Background glow effect -->
+            <div class="absolute inset-0 bg-purple-500/10 rounded-3xl blur-3xl z-0"></div>
+
+            <!-- Content Container -->
+            <div class="relative z-10 flex-1 text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-white glowing-text">
+                    FILOTI TAINESE-
+                    ESPARPIANCES
+                </h1>
+                <p class="mt-4 md:mt-6 text-slate-300 text-lg max-w-lg mx-auto md:mx-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <button class="mt-8 bg-purple-600 text-white font-semibold px-8 py-4 rounded-full glowing-button">
+                    Start Now
+                </button>
+            </div>
+
+            <!-- Image Container -->
+            <div class="relative z-10 flex-1 mt-8 md:mt-0 md:ml-12">
+                <img 
+                    src="https://placehold.co/800x600/1e293b/a855f7?text=Hero+Image" 
+                    alt="Futuristic Characters" 
+                    class="w-full h-auto rounded-xl shadow-2xl"
+                />
+            </div>
+        </section>
+
+        <!-- Bots Section -->
+        <section id="bots" class="my-12 md:my-24">
+            <div class="bg-slate-900 rounded-3xl p-6 md:p-12 border border-purple-800/50">
+                <h2 class="text-3xl md:text-4xl font-bold text-center glowing-text mb-8 md:mb-12">Our Bots</h2>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-8">
+                    <!-- Bot 1 Button -->
+                    <a 
+                        href="https://discord.com/oauth2/authorize?client_id=1403721706761224323&permissions=8&integration_type=0&scope=bot+applications.commands"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-slate-800 text-white font-semibold px-8 py-4 rounded-full glowing-button flex-1 text-center"
+                    >
+                        Bot 1: Invite to Discord
+                    </a>
+                    
+                    <!-- Bot 2 Button -->
+                    <a 
+                        href="https://discord.com/oauth2/authorize?client_id=1402963030165422191&permissions=380104726592&integration_type=0&scope=bot+applications.commands"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-slate-800 text-white font-semibold px-8 py-4 rounded-full glowing-button flex-1 text-center"
+                    >
+                        Bot 2: Invite to Discord
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Placeholder content for "highlights" or other sections -->
+        <section class="my-12 md:my-24 bg-slate-900 rounded-3xl p-6 md:p-12 border border-purple-800/50">
+            <h2 class="text-3xl md:text-4xl font-bold text-center glowing-text mb-8">Game Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Highlight Card 1 -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-purple-700/30">
+                    <h3 class="text-xl font-semibold mb-2">Feature One</h3>
+                    <p class="text-slate-400">Description of a cool feature, with more text to fill it out a bit.</p>
+                </div>
+                <!-- Highlight Card 2 -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-purple-700/30">
+                    <h3 class="text-xl font-semibold mb-2">Feature Two</h3>
+                    <p class="text-slate-400">Description of another key feature, explaining its benefits to the user.</p>
+                </div>
+                <!-- Highlight Card 3 -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-purple-700/30">
+                    <h3 class="text-xl font-semibold mb-2">Feature Three</h3>
+                    <p class="text-slate-400">Description of a third feature, highlighting what makes it unique.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Features Section -->
-    <section id="features" class="bg-gray-800 py-16 md:py-24">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-white mb-12">What We Offer</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <!-- Feature 1 -->
-                <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 transition-transform transform hover:scale-105">
-                    <svg class="h-16 w-16 mx-auto mb-4 text-red-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.01L6 12.01l1.41-1.41 3.59 3.59 7.59-7.59L18 8.01l-7 7z"/></svg>
-                    <h3 class="text-2xl font-semibold text-white mb-2">Latest Releases</h3>
-                    <p class="text-gray-400">Stay up-to-date with the newest and most exciting games hitting the market.</p>
-                </div>
-                <!-- Feature 2 -->
-                <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 transition-transform transform hover:scale-105">
-                    <svg class="h-16 w-16 mx-auto mb-4 text-red-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 6h-6V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H2v15h20V6zm-8 0h-4V4h4v2z"/></svg>
-                    <h3 class="text-2xl font-semibold text-white mb-2">Community & Events</h3>
-                    <p class="text-gray-400">Join our thriving community and participate in exclusive events and tournaments.</p>
-                </div>
-                <!-- Feature 3 -->
-                <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 transition-transform transform hover:scale-105">
-                    <svg class="h-16 w-16 mx-auto mb-4 text-red-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 10.999h-4.001v-4.001h-2v4h-4v-4h-2v4h-4v-4h-2v4H2v2h4.001v4.001h4v-4h4v4h4v-4h4V11z"/></svg>
-                    <h3 class="text-2xl font-semibold text-white mb-2">Esports Coverage</h3>
-                    <p class="text-gray-400">Get the latest news, streams, and results from your favorite esports leagues.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto text-center px-4">
-            <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-4 md:space-y-0 mb-4">
-                <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
-                <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
-                <a href="#" class="text-gray-400 hover:text-white">Sitemap</a>
-            </div>
-            <p class="text-gray-500 text-sm">© 2023 AllPlay. All rights reserved.</p>
-        </div>
+    <footer class="bg-slate-900 border-t border-purple-800/50 text-center p-4 text-slate-400">
+        <p>&copy; 2025 Nextbit. All rights reserved.</p>
     </footer>
 
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
-
 
